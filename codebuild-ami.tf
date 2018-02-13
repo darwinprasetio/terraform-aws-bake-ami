@@ -28,7 +28,7 @@ resource "aws_codebuild_project" "bake-ami" {
 
     source {
         type     = "CODEPIPELINE"
-        buildspec = "${template_file.buildspec.rendered}"
+        buildspec = "${data.template_file.buildspec.rendered}"
     }
 
     tags {
